@@ -1,2 +1,6 @@
 # Ignore compiled Java classes
 *.class
+
+
+# ignore all bin files
+bin/
