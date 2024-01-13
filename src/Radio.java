@@ -1,14 +1,17 @@
 
-public class Radio {
-
+public class Radio implements Radio_30 {
+    //Atributos de un radio
     private boolean estado; 
     private String Marca; 
-    private int Banda;  // 1 = FM, 2 = AM
+    private int Banda;  // AM = 0, FM = 1
+    private int AM = 0;
+    private int FM = 1;
     private float Estacion; 
-    private int[] Botones = new int[12]; 
+    private float[] BotonesFM = new float[12]; 
+    private int[] BotonesAM = new int[12];
     private int Volumen;
 
-
+    //Constructor para el radio
     public Radio() {
         this.estado = false;
         this.Marca = "Sony";
@@ -17,37 +20,20 @@ public class Radio {
         this.Volumen = 0;
     }
 
-    public void encender() {
-        this.estado = true;
-        System.out.println("La radio se ha encendido");
-
-    }
-
-
-    public boolean getEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
+    //Definir el estado del radio, si estará prendido o apagado
+    public void setEncendido(boolean estado){
         this.estado = estado;
     }
 
-    public String getMarca() {
-        return Marca;
+    //Establecer el volumen del radio
+    public void setVolumen(int volumen){
+        this.Volumen = volumen;
     }
 
-    public void setMarca(String marca) {
-        Marca = marca;
-    }
-
-    public int getBanda() {
-        return Banda;
-    }
-
+    //Definir la banda que se estará escuchando
     public void setBanda(int banda) {
-        if (banda == 1 || banda == 2) {
+        if (banda == 1 || banda == 0) {
             Banda = banda;
-
             if (Banda == 1) {
                 this.Estacion = 88.1f;
                 System.out.println("La banda ha sido cambiada a FM");
@@ -60,44 +46,45 @@ public class Radio {
         }
     }
 
-    public float getEstacion() {
-        return Estacion;
-    }
-
-    public void setEstacion(float estacion) {
+    //Establecer la Estación y Banda
+    public void setEstacion(float emisora, int banda) {
         if (Banda == 1) {
-            if (estacion >= 87.9 && estacion <= 107.9) {
-                Estacion = estacion;
-                System.out.println("La estación ha sido cambiada a " + estacion);
+            if (emisora >= 87.9 && emisora <= 107.91) {
+                Estacion = emisora;
+                System.out.println("La estación ha sido cambiada a " + emisora);
             } else {
                 System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
             }
         } else {
-            if (estacion >= 530 && estacion <= 1610) {
-                Estacion = estacion;
-                System.out.println("La estación ha sido cambiada a " + estacion);
+            if (emisora >= 530 && emisora <= 1610) {
+                Estacion = emisora;
+                System.out.println("La estación ha sido cambiada a " + emisora);
             } else {
                 System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
             }
         }
     }
 
-    public int[] getBotones() {
-        return Botones;
+    //Obtenemos la banda en la que nos encontramos
+    public int getBanda() {
+        return Banda;
     }
 
-    public void setBotones(int[] botones) {
-        Botones = botones;
+    //Obtenemos el estado del radio
+    public boolean getEncendido() {
+        return estado;
     }
 
+    //Obtenemos la Estación en la que está la radio
+    public float getEstacion() {
+        return Estacion;
+    }
+
+    //Obtenemos el volumen que tiene el radio actualmente
     public int getVolumen() {
         return Volumen;
     }
 
-    public void setVolumen(int volumen) {
-        Volumen = volumen;
-    }
-    
-
-    
+    //FALTA COLOCAR ACÁ ABAJO LOS MÉTODOS DE GUARDARESTACION Y RECUPERARESTACIÓN
+  
 }
