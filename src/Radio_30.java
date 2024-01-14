@@ -1,4 +1,5 @@
 public interface Radio_30 {
+    //Métodos y atributos para implementar en un radio
     void setEncendido(boolean estado);
     void setVolumen(int volumen);
     void setEstacion(float emisora, int banda);
