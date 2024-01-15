@@ -92,6 +92,8 @@ public class Radio implements Radio_30 {
             // Manejar el caso en que el usuario ingrese un número fuera del rango 1-12
             System.out.println("Error: El índice del botón debe estar entre 1 y 12.");
             return; // No se realiza la operación si hay un error.
+        } else {
+            System.out.println("Guardando estación...");
         }
     
         if (banda == 0) {

@@ -96,9 +96,8 @@ public class App {
                     int banda1 = radio.getBanda();
                     Float emisora1 = radio.getEstacion();
                     System.out.println("¿En qué botón desea guardar la emisora actual? 1~12");
-                    int espacio = Integer.parseInt(scanner.nextLine());
+                    int espacio = obtenerEnteroValido(scanner);
                     radio.guardarEstacion(emisora1, banda1, espacio); 
-                    System.out.println("Guardando estación...");
                     break;
 
                 //AQUÍ HAY QUE MANDAR A LLAMAR A LA ESTACIÓN CORRECTA 
@@ -116,7 +115,7 @@ public class App {
                     float estacionRecuperada = radio.recuperarEstacion(botonSeleccionado);
             
                     if (estacionRecuperada == 0.0f) {
-                        System.out.println("El botón seleccionado está vacío.");
+                        System.out.println("--------------------------------");
                     } else {
                         int Bandaactual = radio.getBanda();
                         radio.setEstacion(estacionRecuperada, Bandaactual);
@@ -136,7 +135,7 @@ public class App {
                 //O SUBIR POR 1 EL VALOR DEL VOLUMEN
                 //SIEMPRE TOMANDO EN CUENTA EL LIMITE DE 0 A 100
                 case 6:
-                    System.out.println("¿Còmo desea modificar el volumen de la radio?")
+                    System.out.println("¿Còmo desea modificar el volumen de la radio?");
                     int opcion2 = 0;
                     int volumen = 0;
                     while(!(opcion2<=2 && opcion2>=1)){
@@ -145,6 +144,7 @@ public class App {
                         opcion2 = obtenerEnteroValido(scanner);
                         if(opcion2 == 1){
                             System.out.println("Ingrese el nuevo volumen (0-100):");
+                            volumen = obtenerEnteroValido(scanner);
                             // Validación para no ingresar números negativos
                             if (volumen < 0) {
                                 System.out.println("Error: No se pueden ingresar números negativos. Volumen ajustado a 0.");
@@ -152,14 +152,15 @@ public class App {
                             } else if (volumen > 100) {
                                 volumen = 100;
                             }
+                            radio.setVolumen(volumen);
                         } else if(opcion2 == 2){
                             int volumenActual = radio.getVolumen();
                             volumenActual++;
                             radio.setVolumen(volumenActual);
                             System.out.println("Ahora tu volumen es de " + volumenActual + ".");
+                        }else{
+                            System.out.println("Por favor, ingrese una de las dos opciones vàlidas.");
                         };
-                    } else{
-                        System.out.println("Por favor, ingrese una de las dos opciones vàlidas.");
                     }
                     break;
 
