@@ -135,9 +135,32 @@ public class App {
                 //SUBIRLE VOLUMEN A TRAVÉS DE UN VALOR INGRESADO
                 //O SUBIR POR 1 EL VALOR DEL VOLUMEN
                 //SIEMPRE TOMANDO EN CUENTA EL LIMITE DE 0 A 100
-                //ESTO LO VERÁ ADRIANA
                 case 6:
-                    System.out.println("Modificando Volumen...");
+                    System.out.println("¿Còmo desea modificar el volumen de la radio?")
+                    int opcion2 = 0;
+                    int volumen = 0;
+                    while(!(opcion2<=2 && opcion2>=1)){
+                        System.out.println("1. Ingresar volumen de manera manual.");
+                        System.out.println("2. Aumentar por uno el volumen.");
+                        opcion2 = obtenerEnteroValido(scanner);
+                        if(opcion2 == 1){
+                            System.out.println("Ingrese el nuevo volumen (0-100):");
+                            // Validación para no ingresar números negativos
+                            if (volumen < 0) {
+                                System.out.println("Error: No se pueden ingresar números negativos. Volumen ajustado a 0.");
+                                volumen = 0;
+                            } else if (volumen > 100) {
+                                volumen = 100;
+                            }
+                        } else if(opcion2 == 2){
+                            int volumenActual = radio.getVolumen();
+                            volumenActual++;
+                            radio.setVolumen(volumenActual);
+                            System.out.println("Ahora tu volumen es de " + volumenActual + ".");
+                        };
+                    } else{
+                        System.out.println("Por favor, ingrese una de las dos opciones vàlidas.");
+                    }
                     break;
 
                 //Líneas a mostrar al usuario en saso de seleccionar una opción inválida
