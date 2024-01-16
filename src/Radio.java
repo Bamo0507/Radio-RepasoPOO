@@ -49,7 +49,7 @@ public class Radio implements Radio_30 {
     //Establecer la Estación y Banda
     public void setEstacion(float emisora, int banda) {
         if (Banda == 1) {
-            if (incrementoValido(emisora, (float )0.1)) {
+            if (incrementoValido(emisora, (float )0.20)) {
                 if (emisora >= 87.9 && emisora <= 107.91) {
                     Estacion = emisora;
                     System.out.println("La estación ha sido cambiada a " + emisora);
@@ -57,10 +57,10 @@ public class Radio implements Radio_30 {
                     System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
                 }
             } else {
-                System.out.println("La estación solo puede ser de incrementos de 0.1 en 0.1");
+                System.out.println("La estación solo puede ser de incrementos de 0.2 en 0.2");
             }
         } else {
-            if (incrementoValido(emisora, (float) 0.20)) {
+            if (incrementoValido(emisora, (float) 10.0)) {
                 if (emisora >= 530 && emisora <= 1610) {
                     Estacion = emisora;
                     System.out.println("La estación ha sido cambiada a " + emisora);
@@ -68,7 +68,7 @@ public class Radio implements Radio_30 {
                     System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
                 }
             } else {
-                System.out.println("La estación solo puede ser de incrementos de 0.2 en 0.2");
+                System.out.println("La estación solo puede ser de incrementos de 10 en 10 ");
             }
         }
     }
