@@ -49,21 +49,39 @@ public class Radio implements Radio_30 {
     //Establecer la Estación y Banda
     public void setEstacion(float emisora, int banda) {
         if (Banda == 1) {
-            if (emisora >= 87.9 && emisora <= 107.91) {
-                Estacion = emisora;
-                System.out.println("La estación ha sido cambiada a " + emisora);
+            if (incrementoValido(emisora, (float )0.1)) {
+                if (emisora >= 87.9 && emisora <= 107.91) {
+                    Estacion = emisora;
+                    System.out.println("La estación ha sido cambiada a " + emisora);
+                } else {
+                    System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
+                }
             } else {
-                System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
+                System.out.println("La estación solo puede ser de incrementos de 0.1 en 0.1");
             }
         } else {
-            if (emisora >= 530 && emisora <= 1610) {
-                Estacion = emisora;
-                System.out.println("La estación ha sido cambiada a " + emisora);
+            if (incrementoValido(emisora, (float) 0.20)) {
+                if (emisora >= 530 && emisora <= 1610) {
+                    Estacion = emisora;
+                    System.out.println("La estación ha sido cambiada a " + emisora);
+                } else {
+                    System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
+                }
             } else {
-                System.out.println("La estación no ha sido cambiada. Estación fuera de rango.");
+                System.out.println("La estación solo puede ser de incrementos de 0.2 en 0.2");
             }
         }
     }
+
+    public boolean incrementoValido(float numero, float incremento) {
+        float value  =   (numero / incremento) ;
+
+        float remain = value % 1;
+
+        return 0.99<= remain & remain < 1 | remain == 0;  
+    }
+
+    
 
     //Obtenemos la banda en la que nos encontramos
     public int getBanda() {

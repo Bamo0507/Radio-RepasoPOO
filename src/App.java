@@ -48,20 +48,19 @@ public class App {
             //Variables para manejar las elecciones del usuario
             //
             //Guarda la opción elegida para el menú principal
-            int opcion = obtenerEnteroValido(scanner);
+            String opcion = scanner.nextLine();
             //Verifica que se ingrese algo válido
             boolean verificacion1 = true;
 
             //Se correrá la opción correspondiente dependiendo de lo que el usuario elija
             switch (opcion) {
                 //Código a correr para cambiar de AM a FM a AM
-                case 1:
-                    opcion = -1;
-                    while(!(opcion >= 1 && opcion <= 2)){
+                case "1":
                         System.out.println("Elige una banda: ");
                         System.out.println("1. FM");
                         System.out.println("2. AM");
-                        switch(opcion = obtenerEnteroValido(scanner)){
+                        int opcionBanda = scanner.nextInt();
+                        switch(opcionBanda){
                             case 1:
                                 radio.setBanda(1);
                                 banda = "FM";
@@ -73,26 +72,22 @@ public class App {
                             default:
                                 System.out.println("Por favor, seleccione una opción válida.");
                         }
-                    }
                     break;
                 
                 //Código a correr para cambiar de estación (avanzar en el dial)
-                case 2:
+                case "2":
                     System.out.println("Cambiando de estación...");
                     System.out.println("Elige una estación: ");
-                    float new_estacion;
-                    if(banda.equals("AM")){
-                        new_estacion = obtenerEnteroValido(scanner);
-                    } else {
-                        new_estacion = obtenerFloatValido(scanner);
-                    }
-                    radio.setEstacion(new_estacion, radio.getBanda());
-                    break;
-
+                    float new_estacion = scanner.nextFloat();
+                    scanner.nextLine();
+                    int currentBanda = radio.getBanda();
+                    radio.setEstacion(new_estacion, currentBanda);
+                    break; 
+                    
 
                 //AQUÍ HAY QUE GUARDAR LA ESTÁCIÓN EN ALGUNO DE LOS 12 BOTONES
                 //DEPENDIENDO DE SI ESTAMOS EN LA BANDA AM O FM
-                case 3:
+                case "3":
                     int banda1 = radio.getBanda();
                     Float emisora1 = radio.getEstacion();
                     System.out.println("¿En qué botón desea guardar la emisora actual? 1~12");
@@ -102,30 +97,30 @@ public class App {
 
                 //AQUÍ HAY QUE MANDAR A LLAMAR A LA ESTACIÓN CORRECTA 
                 //ESTO DEPENDE DEL INDICE QUE MANDE EL USUARIO Y DE LA BANDA (AM O FM)
-                case 4:
-                System.out.println("Seleccionando estación guardada...");
-                System.out.println("Ingrese el número del botón (1-12) para seleccionar la estación guardada:");
+                case "4":
+                    System.out.println("Seleccionando estación guardada...");
+                    System.out.println("Ingrese el número del botón (1-12) para seleccionar la estación guardada:");
+                    
+                    int botonSeleccionado = Integer.parseInt(scanner.nextLine());
                 
-                int botonSeleccionado = Integer.parseInt(scanner.nextLine());
-            
-                if (botonSeleccionado < 1 || botonSeleccionado > 12) {
-                    System.out.println("Error: El número del botón debe estar entre 1 y 12.");
-                } else {
-              
-                    float estacionRecuperada = radio.recuperarEstacion(botonSeleccionado);
-            
-                    if (estacionRecuperada == 0.0f) {
-                        System.out.println("--------------------------------");
+                    if (botonSeleccionado < 1 || botonSeleccionado > 12) {
+                        System.out.println("Error: El número del botón debe estar entre 1 y 12.");
                     } else {
-                        int Bandaactual = radio.getBanda();
-                        radio.setEstacion(estacionRecuperada, Bandaactual);
-                        System.out.println("Estación guardada seleccionada: " + estacionRecuperada);
+                
+                        float estacionRecuperada = radio.recuperarEstacion(botonSeleccionado);
+                
+                        if (estacionRecuperada == 0.0f) {
+                            System.out.println("--------------------------------");
+                        } else {
+                            int Bandaactual = radio.getBanda();
+                            radio.setEstacion(estacionRecuperada, Bandaactual);
+                            System.out.println("Estación guardada seleccionada: " + estacionRecuperada);
+                        }
                     }
-                }
-                break;
+                    break;
 
                 //Si se selecciona la opción de apagar la radio
-                case 5:
+                case "5":
                     System.out.println("Apagando la radio...");
                     radio.setEncendido(false);
                     break;
@@ -134,7 +129,7 @@ public class App {
                 //SUBIRLE VOLUMEN A TRAVÉS DE UN VALOR INGRESADO
                 //O SUBIR POR 1 EL VALOR DEL VOLUMEN
                 //SIEMPRE TOMANDO EN CUENTA EL LIMITE DE 0 A 100
-                case 6:
+                case "6":
                     System.out.println("¿Còmo desea modificar el volumen de la radio?");
                     int opcion2 = 0;
                     int volumen = 0;
