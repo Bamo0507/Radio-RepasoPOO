@@ -59,7 +59,7 @@ public class App {
                         System.out.println("Elige una banda: ");
                         System.out.println("1. FM");
                         System.out.println("2. AM");
-                        int opcionBanda = scanner.nextInt();
+                        int opcionBanda = obtenerEnteroValido(scanner);
                         switch(opcionBanda){
                             case 1:
                                 radio.setBanda(1);

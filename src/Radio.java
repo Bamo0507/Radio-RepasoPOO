@@ -1,4 +1,5 @@
 
+
 public class Radio implements Radio_30 {
     //Atributos de un radio
     private boolean estado; 
@@ -155,6 +156,5 @@ public class Radio implements Radio_30 {
             return 0.0f;
         }
     }
-    
 
 }
