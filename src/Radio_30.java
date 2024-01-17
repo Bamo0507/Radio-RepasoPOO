@@ -1,3 +1,5 @@
+//Esta clase es la interfaz a implementar por elradio, se establecen algunos de los métodos que se tienen que incluir.
+
 public interface Radio_30 {
     //Métodos y atributos para implementar en un radio
     void setEncendido(boolean estado);

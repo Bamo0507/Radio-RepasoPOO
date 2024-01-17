@@ -1,3 +1,5 @@
+//En esta clase se prueban los JUnit tests para comprobar que algunos de nuestros métodos funcionen como se espera.
+
 //Librerías para probar los métodos
 import org.junit.Before;
 import org.junit.Test;
@@ -22,6 +24,14 @@ public class RadioTest {
         assertEquals(5, radio.getVolumen());
     }
 
+    //Se prueba el incremento que se vaya a dar en la emisora y si es válido
+    @Test
+    public void testIncrementoValido() {
+        assertTrue(radio.incrementoValido(95.5f, 0.1f));
+        assertFalse(radio.incrementoValido(95.55f, 0.1f));
+        assertTrue(radio.incrementoValido(600, 0.2f));
+        assertFalse(radio.incrementoValido(600.1f, 0.2f));
+    }
 
 
 }

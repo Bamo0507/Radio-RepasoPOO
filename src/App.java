@@ -1,8 +1,13 @@
+//En esta clase se manejará toda la lógica detrás de nuestro programa.
+//Este se encargará de manejar que el radio realicé diferentes funciones, como aumentar volumen, modificar estado, cambiar de band y estación.
 import java.util.Scanner;
 
-
-
 public class App {
+    
+    /** 
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         //Mensaje de bienvenida
         System.out.println("BIENVENIDO A TU RADIO DE CONFIANZA!");
@@ -170,6 +175,11 @@ public class App {
 
     }
 
+    
+    /** 
+     * @param scanner
+     * @return int
+     */
     //Método para asegurarse que se ingrese un entero en los campos necesarios
     public static int obtenerEnteroValido(Scanner scanner) {
         int numero = 0;
@@ -190,6 +200,10 @@ public class App {
         return numero;
     }
 
+    /** 
+     * @param scanner
+     * @return float
+     */
     //Método para asegurarse que se ingrese un float en los campos necesarios
     public static float obtenerFloatValido(Scanner scanner) {
         float numero = 0.0f;  // Inicializado a 0.0f
