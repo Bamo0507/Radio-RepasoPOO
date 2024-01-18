@@ -172,11 +172,6 @@ public class Radio implements Radio_30 {
         }
     }
     
-    
-    /** 
-     * @param indice
-     * @return float
-     */
     public float recuperarEstacion(int indice) {
         int Boton = indice - 1;
     
