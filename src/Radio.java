@@ -49,7 +49,7 @@ public class Radio implements Radio_30 {
         if (banda == 1 || banda == 0) {
             Banda = banda;
             if (Banda == 1) {
-                this.Estacion = 88.1f;
+                this.Estacion = 87.9f;
                 System.out.println("La banda ha sido cambiada a FM");
             } else {
                 this.Estacion = 530;

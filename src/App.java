@@ -26,8 +26,7 @@ public class App {
             System.out.println("Presiona 1 para encender la radio:");
             System.out.println("Presiona 2 para terminar el programa:");
 
-            int mainOpcion = scanner.nextInt();
-            scanner.nextLine();
+            int mainOpcion = obtenerEnteroValido(scanner);
 
             if (mainOpcion == 1) {
 
@@ -171,6 +170,9 @@ public class App {
                                 } else if(opcion2 == 2){
                                     int volumenActual = radio.getVolumen();
                                     volumenActual++;
+                                    if(volumenActual >= 100){
+                                        volumenActual = 100;
+                                    }
                                     radio.setVolumen(volumenActual);
                                     System.out.println("Ahora tu volumen es de " + volumenActual + ".");
                                 }else{
@@ -207,7 +209,6 @@ public class App {
 
     }
 
-    
     /** 
      * @param scanner
      * @return int
