@@ -172,7 +172,7 @@ public class Radio implements Radio_30 {
         if (banda == 0) {
             BotonesAM[Boton] = (int) emisora;
         } else if (banda == 1) {
-            BotonesFM[Boton] = (int) emisora;
+            BotonesFM[Boton] = emisora;
         } else {
           
             System.out.println("Error: El valor de banda debe ser (AM) o (FM).");

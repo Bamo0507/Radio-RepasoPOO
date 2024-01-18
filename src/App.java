@@ -11,7 +11,7 @@ public class App {
 
         
     }
-    
+
     public void Menu(){
 
 
@@ -119,7 +119,7 @@ public class App {
                             System.out.println("Seleccionando estación guardada...");
                             System.out.println("Ingrese el número del botón (1-12) para seleccionar la estación guardada:");
                             
-                            int botonSeleccionado = Integer.parseInt(scanner.nextLine());
+                            int botonSeleccionado = obtenerEnteroValido(scanner);
                         
                             if (botonSeleccionado < 1 || botonSeleccionado > 12) {
                                 System.out.println("Error: El número del botón debe estar entre 1 y 12.");
