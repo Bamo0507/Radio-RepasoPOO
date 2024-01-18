@@ -66,7 +66,7 @@ public class Radio implements Radio_30 {
      * @param banda
      */
     //Establecer la Estación y Banda
-    public void setEstacion(float emisora, int banda) {
+    public void setEstacionBanda(float emisora, int banda) {
         if (Banda == 1) {
             if (incrementoValido(emisora, (float )0.30)) {
                 if (emisora >= 87.9 && emisora <= 107.91) {
@@ -150,7 +150,7 @@ public class Radio implements Radio_30 {
      * @param banda
      * @param indice
      */
-    public void guardarEstacionBanda(float emisora, int banda, int indice) {
+    public void guardarEstacion(float emisora, int banda, int indice) {
         int Boton = indice - 1;
     
         if (Boton < 0 || Boton >= 12) {

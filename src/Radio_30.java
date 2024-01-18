@@ -23,7 +23,7 @@ public interface Radio_30 {
      * @param emisora Frecuencia de la estación.
      * @param banda   Banda de la estación (AM o FM).
      */
-    void setEstacion(float emisora, int banda);
+    void setEstacionBanda(float emisora, int banda);
 
     /**
      * Obtiene el estado de encendido o apagado del sistema de radio.
@@ -60,7 +60,7 @@ public interface Radio_30 {
      * @param banda   Banda de la estación (AM o FM).
      * @param indice  Índice donde se guardará la estación.
      */
-    void guardarEstacionBanda(float emisora, int banda, int indice);
+    void guardarEstacion(float emisora, int banda, int indice);
 
     /**
      * Recupera la estación previamente guardada en un índice específico.
