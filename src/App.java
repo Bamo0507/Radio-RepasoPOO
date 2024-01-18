@@ -111,7 +111,7 @@ public class App {
                             Float emisora1 = radio.getEstacion();
                             System.out.println("¿En qué botón desea guardar la emisora actual? 1~12");
                             int espacio = obtenerEnteroValido(scanner);
-                            radio.guardarEstacion(emisora1, banda1, espacio); 
+                            radio.guardarEstacionBanda(emisora1, banda1, espacio); 
                             break;
 
                         //AQUÍ HAY QUE MANDAR A LLAMAR A LA ESTACIÓN CORRECTA 

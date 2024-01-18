@@ -150,7 +150,7 @@ public class Radio implements Radio_30 {
      * @param banda
      * @param indice
      */
-    public void guardarEstacion(float emisora, int banda, int indice) {
+    public void guardarEstacionBanda(float emisora, int banda, int indice) {
         int Boton = indice - 1;
     
         if (Boton < 0 || Boton >= 12) {
