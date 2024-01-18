@@ -100,10 +100,18 @@ public class Radio implements Radio_30 {
      */
     //Se establece si se está aumentando acorde a lo que es permitido por AM o FM
     public boolean incrementoValido(float numero, float incremento) {
-        float value = (numero / incremento);
-        float remain = value % 1;
+        float value = (numero / incremento); // For example, 5.5 / 0.2 = 27.5 
+        String strNumero = String.valueOf(numero);
+        int ch = (int) strNumero.charAt(strNumero.length() - 1); // 27.5 -> 5
+        float remain = value % 1; // 27.5 % 1 = 0.5
 
-        return (0.99 <= remain && remain < 1) || remain == 0 || remain == 0.5;
+        if (numero % 5 == 0) {
+            return (0.99 <= remain && remain < 1) || remain == 0;
+        } else if (ch % 2 != 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     
