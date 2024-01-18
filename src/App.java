@@ -11,8 +11,7 @@ public class App {
 
         
     }
-
-
+    
     public void Menu(){
 
 
@@ -100,7 +99,7 @@ public class App {
                             float new_estacion = scanner.nextFloat();
                             scanner.nextLine();
                             int currentBanda = radio.getBanda();
-                            radio.setEstacion(new_estacion, currentBanda);
+                            radio.setEstacionBanda(new_estacion, currentBanda);
                             break; 
                             
 
@@ -132,7 +131,7 @@ public class App {
                                     System.out.println("--------------------------------");
                                 } else {
                                     int Bandaactual = radio.getBanda();
-                                    radio.setEstacion(estacionRecuperada, Bandaactual);
+                                    radio.setEstacionBanda(estacionRecuperada, Bandaactual);
                                     System.out.println("Estación guardada seleccionada: " + estacionRecuperada);
                                 }
                             }
