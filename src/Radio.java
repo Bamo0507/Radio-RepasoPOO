@@ -1,3 +1,5 @@
+//Aquí se tiene la clase radio, con todos los atributos generales necesarios para esta.
+//También se tienen los métodos a implementar.
 
 public class Radio implements Radio_30 {
     //Atributos de un radio
@@ -20,16 +22,28 @@ public class Radio implements Radio_30 {
         this.Volumen = 0;
     }
 
+    
+    /** 
+     * @param estado
+     */
     //Definir el estado del radio, si estará prendido o apagado
     public void setEncendido(boolean estado){
         this.estado = estado;
     }
 
+    
+    /** 
+     * @param volumen
+     */
     //Establecer el volumen del radio
     public void setVolumen(int volumen){
         this.Volumen = volumen;
     }
 
+    
+    /** 
+     * @param banda
+     */
     //Definir la banda que se estará escuchando
     public void setBanda(int banda) {
         if (banda == 1 || banda == 0) {
@@ -46,6 +60,11 @@ public class Radio implements Radio_30 {
         }
     }
 
+    
+    /** 
+     * @param emisora
+     * @param banda
+     */
     //Establecer la Estación y Banda
     public void setEstacion(float emisora, int banda) {
         if (Banda == 1) {
@@ -73,6 +92,13 @@ public class Radio implements Radio_30 {
         }
     }
 
+    
+    /** 
+     * @param numero
+     * @param incremento
+     * @return boolean
+     */
+    //Se establece si se está aumentando acorde a lo que es permitido por AM o FM
     public boolean incrementoValido(float numero, float incremento) {
         float value  =   (numero / incremento) ;
 
@@ -83,26 +109,48 @@ public class Radio implements Radio_30 {
 
     
 
+    
+    /** 
+     * @return int
+     */
     //Obtenemos la banda en la que nos encontramos
     public int getBanda() {
         return Banda;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     //Obtenemos el estado del radio
     public boolean getEncendido() {
         return estado;
     }
 
+    
+    /** 
+     * @return float
+     */
     //Obtenemos la Estación en la que está la radio
     public float getEstacion() {
         return Estacion;
     }
 
+    
+    /** 
+     * @return int
+     */
     //Obtenemos el volumen que tiene el radio actualmente
     public int getVolumen() {
         return Volumen;
     }
 
+    
+    /** 
+     * @param emisora
+     * @param banda
+     * @param indice
+     */
     public void guardarEstacion(float emisora, int banda, int indice) {
         int Boton = indice - 1;
     
@@ -124,6 +172,11 @@ public class Radio implements Radio_30 {
         }
     }
     
+    
+    /** 
+     * @param indice
+     * @return float
+     */
     public float recuperarEstacion(int indice) {
         int Boton = indice - 1;
     
@@ -155,6 +208,5 @@ public class Radio implements Radio_30 {
             return 0.0f;
         }
     }
-    
 
 }
