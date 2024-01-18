@@ -258,6 +258,11 @@ public class App {
     }
 
 
+    /**
+     * Devuelve una representación en forma de cadena de caracteres de este objeto.
+     *
+     * @return La representación en forma de cadena de caracteres de este objeto.
+     */
     @Override
     public String toString() {
         return "App []";

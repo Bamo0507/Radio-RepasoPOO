@@ -1,7 +1,6 @@
 //En esta clase se prueban los JUnit tests para comprobar que algunos de nuestros métodos funcionen como se espera.
 
 //Librerías para probar los métodos
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

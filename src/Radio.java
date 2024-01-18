@@ -68,7 +68,7 @@ public class Radio implements Radio_30 {
     //Establecer la Estación y Banda
     public void setEstacion(float emisora, int banda) {
         if (Banda == 1) {
-            if (incrementoValido(emisora, (float )0.20)) {
+            if (incrementoValido(emisora, (float )0.30)) {
                 if (emisora >= 87.9 && emisora <= 107.91) {
                     Estacion = emisora;
                     System.out.println("La estación ha sido cambiada a " + emisora);
@@ -100,11 +100,10 @@ public class Radio implements Radio_30 {
      */
     //Se establece si se está aumentando acorde a lo que es permitido por AM o FM
     public boolean incrementoValido(float numero, float incremento) {
-        float value  =   (numero / incremento) ;
-
+        float value = (numero / incremento);
         float remain = value % 1;
 
-        return 0.99<= remain & remain < 1 | remain == 0;  
+        return (0.99 <= remain && remain < 1) || remain == 0 || remain == 0.5;
     }
 
     
@@ -172,6 +171,15 @@ public class Radio implements Radio_30 {
         }
     }
     
+    /**
+     * Recupera la estación guardada en el botón especificado por el índice.
+     * 
+     * @param indice El índice del botón (entre 1 y 12).
+     * @return La estación guardada en el botón especificado.
+     *         Si el índice está fuera del rango válido, se muestra un mensaje de error y se devuelve 0.0f.
+     *         Si el botón seleccionado está vacío, se muestra un mensaje de error y se devuelve 0.0f.
+     *         Si el valor de la banda no es válido, se muestra un mensaje de error y se devuelve 0.0f.
+     */
     public float recuperarEstacion(int indice) {
         int Boton = indice - 1;
     
