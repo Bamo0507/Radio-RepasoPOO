@@ -1,18 +1,35 @@
-## Getting Started
+# Proyecto de Radio
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto simula una radio con funcionalidades básicas. El usuario puede interactuar con la radio a través de un menú de opciones.
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+- **Encender la radio:** Al iniciar el programa, el usuario tiene la opción de encender la radio.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- **Cambiar de banda:** El usuario puede cambiar entre las bandas AM y FM.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- **Cambiar de estación:** El usuario puede cambiar la estación de la radio.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- **Guardar estación:** El usuario puede guardar la estación actual en uno de los 12 botones disponibles.
 
-## Dependency Management
+- **Seleccionar estación guardada:** El usuario puede seleccionar una estación previamente guardada.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **Apagar la radio:** El usuario puede apagar la radio.
+
+- **Modificar el volumen:** El usuario puede modificar el volumen de la radio, ya sea ingresando un valor específico o incrementándolo en uno.
+
+## Cómo usar
+
+Para usar este programa, simplemente ejecute el archivo App.java. Se le presentará un menú de opciones. Siga las instrucciones en pantalla para interactuar con la radio.
+
+## Notas
+
+Este proyecto es una simulación y no interactúa con hardware de radio real. Todas las interacciones y cambios de estado ocurren dentro del programa.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Por favor, abra un problema para discutir lo que le gustaría cambiar o enviar una solicitud de extracción.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT.
